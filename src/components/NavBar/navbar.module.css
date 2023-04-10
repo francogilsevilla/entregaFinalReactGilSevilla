@@ -1,0 +1,18 @@
+.navTitle{
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container{
+    height: 50px;
+    width: auto;
+    font-size: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    background-color: lightcoral;
+    margin: 5px;
+}
