@@ -10,7 +10,7 @@ const ItemListContainer = () => {
 
     const { idCategory } = useParams();
 
-    const [title, setTitle] = useState([])
+    const [title, setTitle] = useState("")
     const [products, setProducts] = useState([]);
 
     const getData = async () => {
