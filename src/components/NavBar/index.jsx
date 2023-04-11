@@ -25,6 +25,7 @@
 
 import { Link, NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget";
+import styles from "./navbar.module.css"
 
 
 const NavBar = () => {
@@ -42,23 +43,23 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container-fluid">
-                <ul className="navbar-nav float-right">
-                    <NavLink className="navbar-brand float-center" to="/home" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>
+        <div>
+        <nav>
+                <ul>
+                    <NavLink to="/home" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>
                         CHIC
                     </NavLink>
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>Inicio</NavLink>
+                    <li>
+                        <NavLink  to="/" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>Inicio</NavLink>
                     </li>
-                    <li className="nav-item">
+                    <li >
                         <NavLink className="nav-link" to="/about" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>Sobre Nosotros</NavLink>
                     </li>
-                    <li className="nav-item dropdown">
-                        <p className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li>
+                        <p>
                             Categorias
                         </p>
-                        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul className={styles.dropdown} >
                             <li><NavLink to="/category/1" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>Remeras</NavLink></li>
                             <li><NavLink to="/category/2" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>Accsesorios</NavLink></li>
                         </ul>
@@ -72,8 +73,8 @@ const NavBar = () => {
                     </NavLink>
                     </li>
                 </ul>
-            </div>
         </nav>
+        </div>
     );
 
 }

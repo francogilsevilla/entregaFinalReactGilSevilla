@@ -12,9 +12,11 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.11.16",
+    "@popperjs/core": "^2.11.7",
     "bootstrap": "^5.2.3",
     "firebase": "^9.19.1",
     "firestore": "^1.1.6",
+    "jquery": "^3.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0"
