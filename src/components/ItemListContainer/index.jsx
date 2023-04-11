@@ -43,9 +43,9 @@ const ItemListContainer = () => {
                 .catch(err => console.error(err));
 
             if (+idCategory === 1) {
-                setTitle("Juegos");
+                setTitle("Remeras");
             } else {
-                setTitle("Consolas")
+                setTitle("Accesorios")
             }
         } else {
             getData()

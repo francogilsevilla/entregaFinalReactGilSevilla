@@ -5,7 +5,7 @@ const ItemCount = ({ stock, value, onAdd }) => {
     const [count, setCount] = useState(value);
 
     const add = () => {
-        setCount((count < stock) ? count + 1 : stock);
+        setCount(count + 1);
     }
 
     const deduct = () => {

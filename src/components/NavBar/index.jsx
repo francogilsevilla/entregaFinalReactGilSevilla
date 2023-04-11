@@ -1,31 +1,5 @@
-//     return (
-//         <nav className={styles.container}>
-//             <h1 className={styles.navTitle}>CHIC</h1>
-//             <NavLink
-//                 to="/Inicio"
-//                 style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
-//             >
-//                 Inicio
-//             </NavLink>
-//             <NavLink
-//                 to="productos"
-//                 style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
-//             >
-//                 Productos
-//             </NavLink>
-//             <NavLink
-//                 to="cart"
-//                 style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
-//             >
-//                 <span>🛒3</span>
-//             </NavLink>
-//         </nav>
-//     );
-// };
-
 import { Link, NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget";
-import styles from "./navbar.module.css"
 
 
 const NavBar = () => {
@@ -43,38 +17,45 @@ const NavBar = () => {
     };
 
     return (
-        <div>
-        <nav>
-                <ul>
-                    <NavLink to="/home" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>
-                        CHIC
-                    </NavLink>
-                    <li>
-                        <NavLink  to="/" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>Inicio</NavLink>
-                    </li>
-                    <li >
-                        <NavLink className="nav-link" to="/about" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>Sobre Nosotros</NavLink>
-                    </li>
-                    <li>
-                        <p>
-                            Categorias
-                        </p>
-                        <ul className={styles.dropdown} >
-                            <li><NavLink to="/category/1" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>Remeras</NavLink></li>
-                            <li><NavLink to="/category/2" style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}>Accsesorios</NavLink></li>
-                        </ul>
-                    </li>
-                    <li>
-                    <NavLink
-                        to="cart"
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul className="navbar-nav mr-auto d-flex align-items-center  col-10">
+                <li className="nav-item">
+                    <NavLink className="mr-4"
+                        to="/Home"
                         style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
                     >
-                        <CartWidget />
+                        CHIC
                     </NavLink>
-                    </li>
-                </ul>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="mr-4"
+                        to="/About"
+                        style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
+                    >
+                        Sobre Nosotros
+                    </NavLink>
+                </li>
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle mr-4" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        Categorias
+                    </a>
+                    <div className="dropdown-menu">
+                        <a className="dropdown-item" href="/category/1">Remeras</a>
+                        <a className="dropdown-item" href="/category/2">Accesorios</a>
+                    </div>
+                </li>
+            </ul>
+            <ul className="navbar-nav mr-auto col-2 justify-content-end">
+                <li>
+                    <NavLink
+                        to="/cart"
+                        style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
+                    >
+                        <CartWidget/>
+                    </NavLink>
+                </li>
+            </ul>
         </nav>
-        </div>
     );
 
 }
