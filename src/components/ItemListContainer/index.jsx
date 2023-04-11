@@ -29,7 +29,13 @@ const ItemListContainer = () => {
             const itemsCollection = collection(db,"items");
             const q = query(itemsCollection, where("idCategory", "==", idCat));
             const col = await getDocs(q);
-            return col.docs.map((doc)=> doc = {id: doc.id, ...doc.data()}); 
+            const result = col.docs.map((doc)=> doc = {id: doc.id, ...doc.data()});
+            setProducts(result);
+            if (idCat === "1") {
+                setTitle("Remeras");
+            } else {
+                setTitle("Accesorios")
+            }
         } catch(error){
             console.warn(error);
         }
@@ -37,23 +43,12 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         if (idCategory) {
-            getByCategory(+idCategory)
-            
-                .then(res => {setProducts(res)})
-                .catch(err => console.error(err));
-
-            if (+idCategory === 1) {
-                setTitle("Remeras");
-            } else {
-                setTitle("Accesorios")
-            }
+            getByCategory(idCategory)
         } else {
             getData()
             setTitle("Todos nuestros productos")
         }
-
     }, [idCategory]);
-
 
     return (
         <div className="">

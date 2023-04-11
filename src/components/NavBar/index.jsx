@@ -2,24 +2,25 @@ import { Link, NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget";
 
 
+
 const NavBar = () => {
 
     let activeStyle = {
         color: "white",
         backgroundColor: "black",
         borderRadius: "10%",
-        textDecoration: "none"
+        textDecoration: "none",
     };
 
     let noActiveStyle = {
-        color: "black",
+        color: "white",
         textDecoration: "none",
     };
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <ul className="navbar-nav mr-auto d-flex align-items-center  col-10">
-                <li className="nav-item">
+                <li className="nav-item ">
                     <NavLink className="mr-4"
                         to="/Home"
                         style={({ isActive }) => (isActive ? activeStyle : noActiveStyle)}
