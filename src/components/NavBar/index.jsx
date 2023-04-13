@@ -40,10 +40,10 @@ const NavBar = () => {
                     <a className="nav-link dropdown-toggle mr-4" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                         Categorias
                     </a>
-                    <div className="dropdown-menu">
-                        <a className="dropdown-item" href="/category/1">Remeras</a>
-                        <a className="dropdown-item" href="/category/2">Accesorios</a>
-                    </div>
+                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><Link className="dropdown-item" to="/category/1">Remeras</Link></li>
+                            <li><Link className="dropdown-item" to="/category/2">Accesorios</Link></li>
+                    </ul>
                 </li>
             </ul>
             <ul className="navbar-nav mr-auto col-2 justify-content-end">

@@ -1,5 +1,6 @@
 import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import Form from "../components/Form";
 import { useCartContext } from "../context/CartContext";
 
@@ -17,7 +18,10 @@ const Cart = () => {
         }
         const ordersCollection = collection(getFirestore(), 'orders')
         let orderCreated = await addDoc(ordersCollection, order)
-        alert("Se ha creado su orden, con id: " + orderCreated.id);
+        Swal.fire(
+            'Se ha realizado su compra',
+            'Se ha creado su orden, con id: ' + orderCreated.id
+        );
         await updateStock(cart);
         clearCart();
 
